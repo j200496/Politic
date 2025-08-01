@@ -1,0 +1,18 @@
+<h2 class="text-center text-success fw-bold">{{titulo}}</h2>
+<form [formGroup]="usuariosform" (submit)="guardar()" >
+  <select class=" form form-control mb-3" formControlName="provincia">
+    <option disabled value="prov">Elija la provincia</option>
+    @for(p of provincias; track p.idProvincia){
+      <option [value]="p.nombre">{{p.nombre}}</option>
+    }
+  </select>
+    <input class="form form-control mb-3" formControlName="nombre" type="text" placeholder="Nombre">
+    <input class="form form-control mb-3" formControlName="telefono"  type="text" placeholder="Telefono">
+     <input class="form form-control mb-3" formControlName="direccion" type="text" placeholder="Direccion">
+    <input class="form form-control mb-3" formControlName="cedula" type="text" placeholder="Cédula con guiones">
+<span class="text-danger mb-3" *ngIf="usuariosform.controls['cedula'].errors?.['minlength']">
+  El campo cedula requiere mínimo 11 caracteres
+</span>
+     <button type="submit" [ngClass]="btncolor">{{btn}}</button>
+     <button *ngIf="btncancel" [ngClass]="btncolor2" routerLink="/layout/admin">{{btn2}}</button>
+</form>
