@@ -1,43 +1,43 @@
-# 🗳️ Web App para Candidatos Políticos
+# 🗳️ Political Candidate Web App
 
-Esta es una aplicación web construida con **Angular** que permite a los candidatos políticos recolectar información de sus miembros a través de un formulario público. También incluye un **panel de administración** para editar y eliminar registros. La aplicación se conecta a una **API .NET** para la persistencia de datos.
-
----
-
-## 🚀 Funcionalidades Principales
-
-### 🎯 Módulo Público
-- Formulario para que los miembros se registren con sus datos personales.
-- Validaciones básicas (campos requeridos, formato de correo, etc.).
-- Alertas personalizadas con **SweetAlert2** para retroalimentación al usuario (registro exitoso, errores, etc.).
-
-### 🔐 Panel de Administración
-- Login seguro (opcional, dependiendo del alcance).
-- Listado de miembros registrados.
-- Edición y eliminación de registros.
-- Alertas visuales para confirmar acciones (como eliminar un miembro).
+This is a **Single Page Application (SPA)** built with **Angular** designed for political candidates to collect information from their supporters through a public form. It also includes an **admin panel** to edit and delete member records. The project connects to a **.NET API** for backend data management.
 
 ---
 
-## 🛠️ Tecnologías Utilizadas
+## 🚀 Main Features
 
-| Tecnología | Propósito |
-|------------|-----------|
-| Angular    | Frontend SPA |
-| .NET API   | Backend y persistencia de datos |
-| SweetAlert2| Alertas amigables e interactivas |
-| Bootstrap  | Estilos y diseño responsivo |
-| Reactive Forms | Manejo de formularios con validaciones |
+### 🎯 Public Module
+- A form that allows supporters to register with their personal details.
+- Basic form validations (required fields, email format, etc.).
+- Custom alerts using **SweetAlert2** to provide user feedback (successful registration, errors, etc.).
+
+### 🔐 Admin Panel
+- Optional login for secure access.
+- List view of registered members.
+- Edit and delete functionality for each record.
+- Visual alerts to confirm actions like record deletion.
 
 ---
 
-## 📦 Instalación y Ejecución Local
+## 🛠️ Technologies Used
 
-### Prerrequisitos
-- Node.js y Angular CLI instalados
-- API .NET configurada y corriendo (ver instrucciones del backend)
+| Technology   | Purpose                          |
+|--------------|----------------------------------|
+| Angular      | Frontend SPA                     |
+| .NET API     | Backend & data persistence       |
+| SweetAlert2  | Interactive and friendly alerts  |
+| Bootstrap    | Responsive design & styling      |
+| Reactive Forms | Form handling and validation  |
 
-### Clonar el repositorio
+---
+
+## 📦 Installation and Running Locally
+
+### Prerequisites
+- Node.js and Angular CLI installed
+- Working .NET API backend (check backend setup separately)
+
+### Clone the repository
 ```bash
-git clone https://github.com/tuusuario/tu-repo-angular-candidatos.git
-cd tu-repo-angular-candidatos
+git clone https://github.com/yourusername/angular-candidate-app.git
+cd angular-candidate-app
