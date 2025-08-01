@@ -1,59 +1,43 @@
-# Candidate
+# 🗳️ Web App para Candidatos Políticos
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
+Esta es una aplicación web construida con **Angular** que permite a los candidatos políticos recolectar información de sus miembros a través de un formulario público. También incluye un **panel de administración** para editar y eliminar registros. La aplicación se conecta a una **API .NET** para la persistencia de datos.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Funcionalidades Principales
 
+### 🎯 Módulo Público
+- Formulario para que los miembros se registren con sus datos personales.
+- Validaciones básicas (campos requeridos, formato de correo, etc.).
+- Alertas personalizadas con **SweetAlert2** para retroalimentación al usuario (registro exitoso, errores, etc.).
+
+### 🔐 Panel de Administración
+- Login seguro (opcional, dependiendo del alcance).
+- Listado de miembros registrados.
+- Edición y eliminación de registros.
+- Alertas visuales para confirmar acciones (como eliminar un miembro).
+
+---
+
+## 🛠️ Tecnologías Utilizadas
+
+| Tecnología | Propósito |
+|------------|-----------|
+| Angular    | Frontend SPA |
+| .NET API   | Backend y persistencia de datos |
+| SweetAlert2| Alertas amigables e interactivas |
+| Bootstrap  | Estilos y diseño responsivo |
+| Reactive Forms | Manejo de formularios con validaciones |
+
+---
+
+## 📦 Instalación y Ejecución Local
+
+### Prerrequisitos
+- Node.js y Angular CLI instalados
+- API .NET configurada y corriendo (ver instrucciones del backend)
+
+### Clonar el repositorio
 ```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+git clone https://github.com/tuusuario/tu-repo-angular-candidatos.git
+cd tu-repo-angular-candidatos
