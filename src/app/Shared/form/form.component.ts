@@ -27,7 +27,7 @@ usuariosform = new FormGroup({
   telefono: new FormControl(""),
   direccion: new FormControl(''),
   cedula: new FormControl("",[Validators.required,Validators.minLength(11)]),
-  provincia: new FormControl('prov'),
+  provincia: new FormControl('Elija la provincia'),
 })
 @Input()
 titulo!: string;
@@ -61,7 +61,6 @@ guardar(){
    const formulario = this.usuariosform.value;
    this.metodo.emit(formulario);
    this.usuariosform.reset({ provincia: 'prov' });
-
    this.usuariosform.get('provincia')?.setValue('Elija la provincia');
 
    /*this.service.postpersonas(formulario).subscribe({

@@ -6,7 +6,7 @@ import { FooterComponent } from "../../Shared/footer/footer.component";
 
 @Component({
   selector: 'app-update',
-  imports: [FormComponent, FooterComponent],
+  imports: [FormComponent],
   templateUrl: './update.component.html',
   styleUrl: './update.component.css'
 })

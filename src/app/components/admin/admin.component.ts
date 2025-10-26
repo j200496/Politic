@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PersonasService } from '../../services/personas.service';
 import { inject, Injectable } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
@@ -7,30 +7,67 @@ import * as XLSX from 'xlsx';
 import * as FileSaver from 'file-saver';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from "../../Shared/footer/footer.component";
+import { ChartsComponent } from "../charts/charts.component";
+import { CommonModule } from '@angular/common';
+import { NgLabelTemplateDirective, NgOptionTemplateDirective, NgSelectComponent } from '@ng-select/ng-select';
+import { FormComponent } from '../../Shared/form/form.component';
+
 
 @Component({
   selector: 'app-admin',
-  imports: [RouterLink, FormsModule, FooterComponent],
+  imports: [RouterLink, FormsModule, CommonModule, NgSelectComponent, ChartsComponent,FooterComponent],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css'
 })
-export class AdminComponent {
+export class AdminComponent implements OnInit{
 
-TotalMiembro: number = 0;  
+TotalMiembro: number = 0;
+
 ngOnInit(): void {
   this.getpersonas();
   this.Cantmiembros();
+  this.GetProv();
 }
 service = inject(PersonasService);
+//Miembros
 personas: any = [];
 Buscar:string = "";
-
+//Provincias 
+provincias: any = [];  
+buscarprov!: string;
+provselect: any = []; 
+provfiltradas!: any;;
+prov: any = []; 
+FiltrarProvincias(nombre: string) {
+  if (!nombre) { 
+    this.getpersonas(); 
+  } else {
+    this.service.Filtrarprov(nombre).subscribe(p => {
+      this.personas = p;
+    });
+  }
+}
+guardar(person:any){
+this.service.postpersonas(person).subscribe(()=>{
+this.service.warning("Exito","Datos guardados exitosamente","green");
+})
+}
+GetProv(){
+  this.service.GetProvincias().subscribe(p => {
+    this.provincias = p;
+  })
+}
 Cantmiembros(){
   this.service.TotalMiembros().subscribe( cant => {
     this.TotalMiembro = cant;
   })
 }
-BuscarPersonas(nombre:string){
+FiltrarProv(nombre: string){
+this.service.Filtrarprov(nombre).subscribe(name => {
+  this.prov = name;
+})
+}
+BuscarPersonas(nombre:any){
   this.service.FiltrarPersonas(nombre).subscribe(name =>{
 this.personas = name;
   })
@@ -77,10 +114,10 @@ Swal.fire({
   cancelButtonColor: "red",
 }).then((result) =>{
   if(result.isConfirmed){
-    this.service.deletepersona(id).subscribe(()=>{
-this.service.warning("Exito!","Datos borrados existosamente!","green");
+    this.service.SetPersona(id).subscribe(()=>{
 this.getpersonas();
 this.Cantmiembros();
+this.service.warning("Exito!","Datos borrados existosamente!","green");
 })
 
   }

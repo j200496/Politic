@@ -6,7 +6,7 @@ import { FooterComponent } from '../../Shared/footer/footer.component';
 
 @Component({
   selector: 'app-home',
-  imports: [FormComponent, FooterComponent, HeaderComponent],
+  imports: [FormComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

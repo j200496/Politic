@@ -17,7 +17,7 @@ pass: string = "";
 service = inject(PersonasService);
   login(){
 if(this.user == 'admin' && this.pass == 'admin'){
-  this.route.navigateByUrl("/layout/home")
+  this.route.navigateByUrl("/layout/admin")
 }
 else{
 this.service.warning("Error","Credenciales incorrectas","red");
